@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.RelatorioVisita" table="relatorio_visita">
+    <id column="id" name="id">
+      <generator class="sequence">
+        <param name="sequence">relatorio_visita_id_seq</param>
+      </generator>
+    </id>
+    <property column="data" name="data" not-null="true" type="date"/>
+    <property column="descricao" length="1000" name="descricao" not-null="true" type="string"/>
+    <property column="comentario" length="1000" name="comentario" not-null="false" type="string"/>
+    <property column="nota" name="nota" not-null="false" type="integer"/>
+    <many-to-one class="com.cooper.model.entity.Associado" column="associado" name="associado"/>
+    <many-to-one class="com.cooper.model.entity.Tecnico" column="tecnico" name="tecnico"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <package name="funcionarioUsuario" namespace="/funcionario/usuario" extends="default">
+        <action name="getUsuarioInfo" method="getUsuarioInfo" class="funcionarioUsuarioController">
+            <result name="success">/WEB-INF/funcionario/usuario/getUsuarioInfo.jsp</result>
+        </action>
+
+        <action name="trocarSenha" method="trocarSenha" class="funcionarioUsuarioController">
+            <result name="success">/WEB-INF/funcionario/usuario/trocarSenha.jsp</result>
+        </action>
+    </package>
+</struts>

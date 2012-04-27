@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="tituloServiceImpl" class="com.cooper.model.service.impl.TituloServiceImpl" />
+    
+    <bean id="tituloController" class="com.cooper.associado.controller.TituloController" singleton="false">
+        <property name="tituloService" ref="tituloServiceImpl" />
+    </bean>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!-- generator:mapping -->
+  <class name="com.cooper.model.entity.Titulo" table="titulo">
+    <id column="id" name="id" type="integer"/>
+    <property column="data_criacao" name="dataCriacao" not-null="true" type="date"/>
+    <property column="data_vencimento" name="dataVencimento" not-null="true" type="date"/>
+    <property column="status" length="0" name="status" not-null="true" type="string"/>
+    <property column="tipo" length="0" name="tipo" not-null="true" type="string"/>
+    <property column="valor" name="valor" not-null="true" type="double"/>
+    <many-to-one class="com.cooper.model.entity.Associado" column="associado" name="associado"/>
+  </class>
+</hibernate-mapping>

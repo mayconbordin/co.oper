@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1521/XE</property>
+    <property name="hibernate.connection.username">USERNAME</property>
+    <property name="hibernate.connection.password">PASSWORD</property>
+    <property name="hibernate.show_sql">true</property>
+    <!-- Hibernate Search Configuration -->
+    <property name="hibernate.search.default.directory_provider">filesystem</property>
+    <property name="hibernate.search.default.indexBase">/full/path/to/lucene/indexes</property>
+    <!-- Here you include the hibernate mappings -->
+    <!-- PLEASE DO NOT REMOVE THE COMMENT BELOW -->
+    <!-- generator:mappings -->
+    <mapping resource="com/cooper/model/mapping/Usuario.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Titulo.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Tecnico.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/RelatorioVisita.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/ProdutoNaLoja.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/ProdutoDoOrcamento.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Produto.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Orcamento.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Mensagem.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Loja.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Graos.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Associado.hbm.xml"/>
+    <mapping resource="com/cooper/model/mapping/Acesso.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

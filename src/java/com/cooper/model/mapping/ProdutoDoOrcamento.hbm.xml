@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.ProdutoDoOrcamento" table="produto_do_orcamento">
+    <composite-id class="com.cooper.model.entity.ProdutoDoOrcamentoPk" name="primaryKey">
+      <key-many-to-one class="com.cooper.model.entity.Orcamento" column="orcamento" name="orcamento"/>
+      <key-many-to-one class="com.cooper.model.entity.Produto" column="produto" name="produto"/>
+    </composite-id>
+    <property column="quantidade" name="quantidade" not-null="true" type="double"/>
+  </class>
+</hibernate-mapping>

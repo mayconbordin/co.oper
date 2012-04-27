@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="conta" namespace="/associado/conta" extends="associadoPackage">
+        <!-- Index -->
+        <action name="index" method="index" class="contaController">
+            <result name="success" type="tiles">associadoContaIndex</result>
+            <result name="error" type="tiles" >associadoContaIndex</result>
+            <result name="input" type="tiles" >associadoContaIndex</result>
+        </action>
+
+        <action name="save" method="save" class="contaController">
+            <result name="success" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/associado/conta</param>
+                <param name="status">sucesso</param>
+            </result>
+            <result name="error" type="tiles" >associadoContaIndex</result>
+            <result name="input" type="tiles" >associadoContaIndex</result>
+        </action>
+
+        <action name="accountBox" method="accountBox" class="contaController">
+            <result name="success">/WEB-INF/associado/conta/accountBox.jsp</result>
+        </action>
+    </package>
+</struts>

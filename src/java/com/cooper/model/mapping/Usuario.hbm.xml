@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.Usuario" table="usuario">
+    <id column="codigo" length="20" name="codigo" type="string"/>
+    <property column="senha" length="64" name="senha" not-null="true" type="string"/>
+    <property column="email" length="80" name="email" not-null="false" type="string"/>
+    <property column="status" length="10" name="status" not-null="true" type="string"/>
+    <property column="ultimo_acesso" name="ultimoAcesso" not-null="false" type="timestamp"/>
+    <property column="criado_em" name="criadoEm" not-null="false" type="timestamp"/>
+    <property column="nivel" name="nivel" not-null="false" type="int"/>
+  </class>
+</hibernate-mapping>

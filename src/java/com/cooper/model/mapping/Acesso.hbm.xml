@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.Acesso" table="acesso">
+    <composite-id class="com.cooper.model.entity.AcessoPk" name="primaryKey">
+      <key-property column="data" name="data" type="timestamp"/>
+      <key-property column="ip" length="40" name="ip" type="string"/>
+    </composite-id>
+    <property column="pagina" length="200" name="pagina" not-null="true" type="string"/>
+    <property column="cod_associado" length="18" name="codAssociado" not-null="false" type="string"/>
+  </class>
+</hibernate-mapping>

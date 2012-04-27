@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="relatorioVisitaServiceImpl" class="com.cooper.model.service.impl.RelatorioVisitaServiceImpl" />
+    <bean id="associadoServiceImpl" class="com.cooper.model.service.impl.AssociadoServiceImpl" />
+
+    <bean id="tecnicoRelatorioVisitaController" class="com.cooper.tecnico.controller.RelatorioVisitaController" singleton="false">
+        <property name="relatorioVisitaService" ref="relatorioVisitaServiceImpl" />
+        <property name="associadoService" ref="associadoServiceImpl" />
+    </bean>
+</beans>

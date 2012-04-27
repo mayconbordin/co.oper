@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="produtoServiceImpl" class="com.cooper.model.service.impl.ProdutoServiceImpl" />
+    <bean id="orcamentoServiceImpl" class="com.cooper.model.service.impl.OrcamentoServiceImpl" />
+    <bean id="produtoNaLojaServiceImpl" class="com.cooper.model.service.impl.ProdutoNaLojaServiceImpl" />
+
+    <bean id="produtoController" class="com.cooper.associado.controller.ProdutoController" singleton="false">
+        <property name="produtoService" ref="produtoServiceImpl" />
+        <property name="orcamentoService" ref="orcamentoServiceImpl" />
+        <property name="produtoNaLojaService" ref="produtoNaLojaServiceImpl" />
+    </bean>
+</beans>

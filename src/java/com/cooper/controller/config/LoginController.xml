@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="login" namespace="/login" extends="default">
+        <!-- Index -->
+        <action name="index" method="index" class="loginController">
+            <result name="success" type="tiles" >loginIndex</result>
+            <result name="error" type="tiles" >loginIndex</result>
+            <result name="input" type="tiles" >loginIndex</result>
+        </action>
+
+        <action name="accessDenied" method="accessDenied" class="loginController">
+            <result name="success" type="tiles" >loginAccessDenied</result>
+        </action>
+
+        <action name="redirect" method="redirect" class="loginController">
+            <result name="funcionario" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/funcionario/index</param>
+            </result>
+            <result name="tecnico" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/tecnico/visita</param>
+            </result>
+            <result name="associado" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/associado/index</param>
+            </result>
+            <result name="error" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/login</param>
+            </result>
+	</action>
+
+        <action name="cadastrar" method="cadastrar" class="loginController">
+            <result name="success" type="tiles" >loginCadastrar</result>
+            <result name="successSave" type="tiles" >loginCadastrarSucesso</result>
+            <result name="error" type="tiles" >loginCadastrarError</result>
+        </action>
+    </package>
+</struts>

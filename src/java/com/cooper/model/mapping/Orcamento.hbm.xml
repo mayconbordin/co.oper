@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.Orcamento" table="orcamento">
+    <id column="id" name="id">
+      <generator class="sequence">
+        <param name="sequence">orcamento_id_seq</param>
+      </generator>
+    </id>
+    <property column="total" name="total" not-null="true" type="double"/>
+    <property column="comentario" length="1000" name="comentario" not-null="false" type="string"/>
+    <property column="status" length="10" name="status" not-null="true" type="string"/>
+    <property column="data" name="data" not-null="true" type="timestamp"/>
+    <many-to-one class="com.cooper.model.entity.Associado" column="associado" name="associado"/>
+    
+    <set cascade="all-delete-orphan" inverse="true" lazy="true" name="produtos" table="produto_do_orcamento">
+      <key column="orcamento"/>
+      <one-to-many class="com.cooper.model.entity.ProdutoDoOrcamento"/>
+    </set>
+  </class>
+</hibernate-mapping>

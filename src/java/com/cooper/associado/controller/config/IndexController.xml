@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="index" namespace="/associado/index" extends="associadoPackage">
+        <!-- Index -->
+        <action name="index" method="index" class="indexController">
+            <result name="success" type="tiles" >associadoIndexIndex</result>
+            <result name="error" type="tiles" >associadoIndexIndex</result>
+            <result name="input" type="tiles" >associadoIndexIndex</result>
+        </action>
+
+
+    </package>
+</struts>

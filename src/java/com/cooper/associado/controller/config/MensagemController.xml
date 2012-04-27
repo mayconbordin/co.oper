@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="mensagem" namespace="/associado/mensagem" extends="associadoPackage">
+    	<!-- Index -->
+        <action name="index" method="index" class="mensagemController">
+            <result name="success" type="tiles">associadoMensagemIndex</result>
+            <result name="error" type="tiles">associadoMensagemIndex</result>
+            <result name="input" type="tiles">associadoMensagemIndex</result>
+        </action>
+
+        <!-- Add -->
+        <action name="add" method="add" class="mensagemController">
+            <result name="success" >/WEB-INF/associado/mensagem/add.jsp</result>
+        </action>
+
+        <action name="listByUsuario" method="listByUsuario" class="mensagemController">
+            <result name="success" >/WEB-INF/associado/mensagem/listByUsuario.jsp</result>
+            <result name="error">/WEB-INF/associado/mensagem/listByUsuario.jsp</result>
+            <result name="input">/WEB-INF/associado/mensagem/listByUsuario.jsp</result>
+        </action>
+
+        <action name="marcarComoLida" method="marcarComoLida" class="mensagemController" />
+        <action name="countNaoLidasByUsuario" method="countNaoLidasByUsuario" class="mensagemController">
+            <result name="success" >/WEB-INF/associado/mensagem/countNaoLidas.jsp</result>
+        </action>
+        
+        <!-- generator:actions -->
+    </package>
+</struts>

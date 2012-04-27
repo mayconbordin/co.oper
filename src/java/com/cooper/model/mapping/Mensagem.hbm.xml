@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!-- generator:mapping -->
+  <class name="com.cooper.model.entity.Mensagem" table="mensagem">
+    <id column="ID" name="id">
+      <generator class="sequence">
+        <param name="sequence">mensagem_id_seq</param>
+      </generator>
+    </id>
+    <property column="conteudo" length="1000" name="conteudo" not-null="true" type="string"/>
+    <property column="data" name="data" not-null="true" type="timestamp"/>
+    <property column="fonte_leu" name="fonteLeu" not-null="true" type="boolean"/>
+    <property column="dest_leu" name="destinoLeu" not-null="true" type="boolean"/>
+    <property column="enviado_por" length="20" name="enviadoPor" not-null="false" type="string"/>
+    <property column="enviado_para" length="20" name="enviadoPara" not-null="false" type="string"/>
+    <property column="enviado_por_fonte" name="enviadoPorFonte" not-null="false" type="integer"/>
+  </class>
+</hibernate-mapping>

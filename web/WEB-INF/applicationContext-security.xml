@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans
+    xmlns:s="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <s:http
+        auto-config="false"
+        use-expressions="true"
+        access-denied-page="/login/accessDenied.action"
+        entry-point-ref="authenticationEntryPoint"
+    >
+        <s:intercept-url pattern="/login/index.action" access="permitAll" />
+        <s:intercept-url pattern="/associado/**" access="hasRole('NIVEL_ASSOCIADO')" />
+        <s:intercept-url pattern="/tecnico/**" access="hasRole('NIVEL_TECNICO')" />
+
+        <s:logout invalidate-session="true" logout-success-url="/login/index.action" />
+
+        <s:custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER" />
+    </s:http>
+
+    <b:bean id="customUserDetailsService" class="com.strutstool.spring.security.CustomUserDetailsService" />
+    <b:bean id="customAuthenticationManager" class="com.strutstool.spring.security.CustomAuthenticationManager" />
+
+    <b:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"
+          p:authenticationManager-ref="customAuthenticationManager"
+          p:authenticationFailureHandler-ref="customAuthenticationFailureHandler"
+          p:authenticationSuccessHandler-ref="customAuthenticationSuccessHandler" />
+
+    <b:bean id="customAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"
+          p:defaultFailureUrl="/login/index.action?error=invalid" />
+
+    <b:bean id="customAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler"
+          p:defaultTargetUrl="/login/redirect.action" />
+
+    <b:bean id="authenticationEntryPoint"
+          class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint"
+          p:loginFormUrl="/login/index.action"/>
+
+    <s:authentication-manager alias="authenticationManager">
+        <s:authentication-provider user-service-ref="customUserDetailsService" />
+    </s:authentication-manager>
+
+</b:beans>

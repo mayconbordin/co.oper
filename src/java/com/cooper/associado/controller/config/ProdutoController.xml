@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="produto" namespace="/associado/produto" extends="associadoPackage">
+    	<!-- Index -->
+        <action name="index" method="index" class="produtoController">
+            <result name="success" type="tiles">associadoProdutoIndex</result>
+            <result name="error" type="tiles">associadoProdutoIndex</result>
+            <result name="input" type="tiles">associadoProdutoIndex</result>
+	</action>
+    </package>
+</struts>

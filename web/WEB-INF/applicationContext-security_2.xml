@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans
+    xmlns:s="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <s:http
+        auto-config="false"
+        use-expressions="true"
+        access-denied-page="/login/index.action?error=invalid"
+        entry-point-ref="authenticationEntryPoint"
+    >
+        <s:intercept-url pattern="/login/index.action" access="permitAll" />
+        <s:intercept-url pattern="/funcionario/**" access="isAuthenticated() and !hasRole('NIVEL_TECNICO') and !hasRole('NIVEL_ASSOCIADO')" />
+        <s:logout invalidate-session="true" logout-success-url="/login/index.action" />
+
+        <s:custom-filter position="FORM_LOGIN_FILTER" ref="adAuthenticationFilter" />
+    </s:http>
+
+<!--
+    <s:http
+        auto-config="false"
+        use-expressions="true"
+        access-denied-page="/login/index.action?error=invalid"
+        entry-point-ref="authenticationEntryPoint"
+    >
+        <s:intercept-url pattern="/login/index.action" access="permitAll" />
+        <s:intercept-url pattern="/associado/**" access="hasRole('NIVEL_ASSOCIADO')" />
+
+        <s:logout invalidate-session="true" logout-success-url="/login/index.action" />
+
+        <s:custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER" />
+    </s:http>
+-->
+
+    <b:bean id="customUserDetailsService" class="com.strutstool.spring.security.CustomUserDetailsService" />
+    <b:bean id="customAuthenticationManager" class="com.strutstool.spring.security.CustomAuthenticationManager" />
+
+    <b:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"
+          p:authenticationManager-ref="customAuthenticationManager"
+          p:authenticationFailureHandler-ref="customAuthenticationFailureHandler"
+          p:authenticationSuccessHandler-ref="customAuthenticationSuccessHandler" />
+
+    <b:bean id="customAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"
+          p:defaultFailureUrl="/login/index.action?error=invalid" />
+
+    <b:bean id="customAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler"
+          p:defaultTargetUrl="/associado/index/index.action" />
+
+    <b:bean id="authenticationEntryPoint"
+          class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint"
+          p:loginFormUrl="/login/index.action"/>
+
+    <s:authentication-manager alias="authenticationManager">
+        <s:authentication-provider ref="ldapAuthProvider" />
+        <s:authentication-provider user-service-ref="customUserDetailsService" />
+    </s:authentication-manager>
+
+
+    <b:bean id="adAuthenticationManager" class="org.springframework.security.authentication.ProviderManager">
+        <b:property name="providers">
+            <b:list>
+                <b:ref local="ldapAuthProvider"/>
+            </b:list>
+        </b:property>
+    </b:bean>
+
+
+    <b:bean id="adAuthenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"
+          p:authenticationManager-ref="adAuthenticationManager"
+          p:authenticationFailureHandler-ref="customAuthenticationFailureHandler"
+          p:authenticationSuccessHandler-ref="customAuthenticationSuccessHandler" />
+
+    <!-- LDAP from Hell -->
+    <b:bean id="ldapAuthProvider" class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider">
+        <b:constructor-arg ref="ldapBindAuthenticator"/>
+        <b:property name="userDetailsContextMapper" ref="ldapUserDetailsContextMapper"/>
+    </b:bean>
+
+    <b:bean id="ldapServer" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+        <!-- MS Active Directory -->
+        <b:constructor-arg value="ldap://10.0.0.254:389/dc=setrem,dc=com,dc=br"/>
+        <b:property name="userDn" value="CN=Helton,OU=Academicos,DC=setrem,DC=com,DC=br"/>
+        <b:property name="password" value="password"/>
+    </b:bean>
+
+    <b:bean id="ldapBindAuthenticator" class="org.springframework.security.ldap.authentication.BindAuthenticator">
+        <b:constructor-arg ref="ldapServer"/>
+        <b:property name="userSearch" ref="ldapSearchBean"/>
+    </b:bean>
+
+    <b:bean id="ldapSearchBean" class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch">
+        <!-- MS Active Directory -->
+        <!-- user-search-base; relative to base of configured context source -->
+        <b:constructor-arg value="ou=Academicos"/>
+        <!-- user-search-filter -->
+        <b:constructor-arg value="(sAMAccountName={0})"/>
+        <b:constructor-arg ref="ldapServer"/>
+    </b:bean>
+
+    <b:bean id="ldapUserDetailsContextMapper" class="org.springframework.security.ldap.userdetails.InetOrgPersonContextMapper" />
+  
+
+
+</b:beans>

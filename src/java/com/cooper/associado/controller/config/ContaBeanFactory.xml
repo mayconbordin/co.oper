@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="usuarioServiceImpl" class="com.cooper.model.service.impl.UsuarioServiceImpl" />
+    <bean id="associadoServiceImpl" class="com.cooper.model.service.impl.AssociadoServiceImpl" />
+    
+    <bean id="contaController" class="com.cooper.associado.controller.ContaController" singleton="false">
+        <property name="usuarioService" ref="usuarioServiceImpl" />
+        <property name="associadoService" ref="associadoServiceImpl" />
+    </bean>
+</beans>

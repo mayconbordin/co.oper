@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <package name="funcionarioAssociado" namespace="/funcionario/associado" extends="default">
+        <action name="index" method="index" class="funcionarioAssociadoController">
+            <result name="success" type="tiles" >funcionarioAssociadoIndex</result>
+            <result name="error" type="tiles" >funcionarioAssociadoIndex</result>
+            <result name="input" type="tiles" >funcionarioAssociadoIndex</result>
+        </action>
+
+        <action name="criarConta" method="criarConta" class="funcionarioAssociadoController">
+            <result name="success">/WEB-INF/funcionario/associado/criarConta.jsp</result>
+        </action>
+    </package>
+</struts>

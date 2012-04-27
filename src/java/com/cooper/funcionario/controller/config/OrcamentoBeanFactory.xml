@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="orcamentoServiceImpl" class="com.cooper.model.service.impl.OrcamentoServiceImpl" />
+
+    <bean id="functionarioOrcamentoController" class="com.cooper.funcionario.controller.OrcamentoController" singleton="false">
+        <property name="orcamentoService" ref="orcamentoServiceImpl" />
+    </bean>
+</beans>

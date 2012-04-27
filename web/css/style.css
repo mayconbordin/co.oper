@@ -1,0 +1,790 @@
+@font-face {
+    font-family: "Aller Regular";
+    src: url("../fonts/Aller_Rg.eot"); /* para IE */
+    src: local("Aller Regular"), url("../fonts/Aller_Rg.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #006600;
+    color: #393939;
+    font-family: "Aller Regular", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 26pt;
+    font-weight: bold;
+}
+
+/** Header Stuff **/
+#headerPage {
+	color:#ffffff;
+	font-size:45px;
+	font-weight:bold;
+	width: 100%;
+        margin-top:10px;
+}
+
+#figuraLogo {
+	float:left;
+	margin-left:3%;
+	margin-right:2%;
+}
+
+#escritaLogo{
+	float:left;
+	text-align: center;
+	margin:20px 0 0 30px;
+}
+
+/** Orçamento e Account Boxes **/
+#infoBoxes {
+    position: absolute;
+    top:-23px;
+    float:right;
+    right:2%;
+    width:405px;
+    z-index: 2000;
+}
+
+#accountBox {
+    width: 151px;
+}
+
+#orcamentoBox,
+#accountBox {
+    height:30px;
+    font-size:12pt;
+    line-height: 30px;
+    background: #332f2c;
+    display:inline-block;
+
+    border-bottom-right-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-radius-bottomright:10px;
+    border-bottom-left-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+}
+
+/** Orçamento Box **/
+#orcamentoBox .enviar,
+#accountBox .sair {
+    color: #ffe400;
+    border-left: 1px solid #5a5a5a;
+    border-bottom-right-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-radius-bottomright:10px;
+}
+
+#orcamentoBox .orcamento,
+#accountBox .minhaConta {
+    color: #fff;
+    border-bottom-left-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+}
+
+#orcamentoBox .orcamento {
+    margin-right:-4px;
+}
+
+#orcamentoBox a,
+#accountBox a {
+    text-decoration: none;
+    padding: 5px 8px 6px 8px;
+    margin:0;
+}
+
+#orcamentoBox a:hover,
+#accountBox a:hover,
+#accountBox .selecionado,
+#orcamentoBox .selecionado {
+    color:#fff;
+    background:#5a5a5a;
+}
+
+/** Associados **/
+.detailedDialog .trocarSenha {
+    margin-top: 10px;
+}
+.detailedDialog .trocarSenha a {
+    width:60%;
+    color:#fff;
+    text-decoration: none;
+    background:#5a5a5a;
+    padding:5px 10px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+.detailedDialog .trocarSenha a:hover {
+    color:#ffe400;
+}
+
+.detailedDialog .novaSenha {
+    margin-top: 5px;
+    display:none;
+}
+
+.detailedDialog .novaSenha input {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+.detailedDialog .novaSenha input[type=password] {
+    height:30px;
+}
+
+.detailedDialog .novaSenha input[type=submit] {
+    margin-top:4px;
+    padding:3px 10px;
+    cursor:pointer;
+}
+
+/** Menu **/
+#menu-inicio a {
+    margin-left:15px;
+}
+
+#mainMenu {
+    z-index:1;
+    clear:both;
+    margin-left:150px;
+    margin-right:2%;
+    position:relative;
+    top:-10px;
+    text-align:left;
+    font-size:18px;
+    background:#332f2c;
+    color:#ffffff;
+    height:40px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -moz-box-shadow: 0 0 5px #3e3e3e;
+    -webkit-box-shadow: 0 0 5px #3e3e3e;
+    box-shadow: 0 0 5px #3e3e3e;
+}
+
+#mainMenuInner li{
+    display:inline;
+}
+
+#mainMenuInner li div a {
+    cursor:pointer;
+    height:30px;
+    padding:10px 2% 0 2%;
+    text-align:center;
+    float:left;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:bold;
+}
+
+#mainMenuInner li div a:hover {
+    background-color:#5a5a5a;
+}
+
+#mainMenuInner .selecionado a {
+    background-color:#5a5a5a;
+}
+
+/** Footer **/
+#footerBig {
+    position:relative;
+    bottom:-20px;
+    width:100%;
+    padding-bottom:30px;
+}
+
+#footer {
+    margin-left:2%;
+    margin-right:2%;
+    text-align:left;
+    font-size:18px;
+    background:#332f2c;
+    color:#ffffff;
+    height:58px;
+    padding-left:20px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -moz-box-shadow: 0 0 5px #3e3e3e;
+    -webkit-box-shadow: 0 0 5px #3e3e3e;
+    box-shadow: 0 0 5px #3e3e3e;
+}
+
+#footer span {
+    line-height: 58px;
+}
+
+/** Conteúdo **/
+#content {
+    position:relative;
+    top:-30px;
+    background-color: #FFFFFF;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+#contentInner{
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 35px;
+}
+
+/** Table **/
+.tableHeaderCorner {
+    height:5px;
+    background:#5A5A5A;
+    clear: both;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tableContainer {
+    clear:both;
+    background:#332f2c;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.table {
+    color: white;
+    width: 100%;
+}
+
+.table tr {
+    height: 35px;
+    font-weight: bold;
+}
+
+.table .tableRecord {
+    cursor:pointer;
+}
+
+.table .tableRecord:hover {
+    background: #8e8e8e;
+}
+
+.table .tableRecord td {
+    padding:10px;
+}
+
+.table td {
+    margin-bottom: 1px;
+}
+
+.tableFirstCol {
+    padding-left:15px;
+}
+
+.tableLastCol {
+    padding-right: 15px;
+}
+
+.tableHeader {
+    background-color: #5a5a5a;
+    font-size:25px;
+}
+
+.tableHeader .tableFirstCol {
+    padding-bottom: 5px;
+}
+
+.tableMoreLink {
+    color: #5bc32e;
+    text-decoration: none;
+}
+
+.table .red {
+    color: #ff4200;
+}
+
+.table .green {
+    color: #5bc32e;
+}
+
+/** Mensagens table **/
+.table .conteudoFull {
+    display:none;
+}
+
+.table .conteudoFull .responder {
+    margin-top: 10px;
+}
+
+.table .data,
+.table .msg .para {
+    font-size: 8pt;
+}
+
+.table .nlidamsg {
+    background-color: #ff4200;
+}
+
+/** Produtos Table **/
+.table .options a {
+    color:#fff;
+    text-decoration: none;
+    background:#5a5a5a;
+    padding:5px 10px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    z-index: 3000;
+}
+
+.table .options a:hover {
+    color:#ffe400;
+}
+
+.table .options .adicionado,
+.table .options .adicionado:hover,
+.table .options .avaliado,
+.table .options .avaliado:hover{
+    color:#fff;
+    background:#5bc32e;
+    cursor: default;
+}
+
+.table .options .remover {
+    color:#fff;
+    background:#ff4200;
+}
+
+.table .options .remover:hover {
+    color:#ffe400;
+}
+
+.table .qtde {
+    display:none;
+    width:300px;
+    margin-top: 10px;
+    font-size:14pt;
+    padding:10px 5px;
+    background:#5a5a5a;
+    cursor: default;
+}
+
+.table .qtde input {
+    width:40px;
+    height:30px;
+    font-size: 14pt;
+}
+
+.table .qtde input[type=submit] {
+    width: auto;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.table .qtde,
+.table .qtde input {
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+/** Search Box **/
+.searchBox {
+    width: 315px;
+    height:40px;
+    margin-bottom: 15px;
+    padding:0 10px;
+    background: #332f2c;
+    color: #fff;
+}
+
+.searchBox .searchInput {
+    padding-top: 5px;
+}
+
+.searchBox input {
+    height:30px;
+    font-size: 14pt;
+}
+
+.searchBox input[type=text] {
+    width:155px;
+}
+
+.searchBox input[type=submit] {
+    padding:0 10px;
+    cursor:pointer;
+}
+
+.searchBox input[type=submit]:hover {
+    background: #5bc32e;
+}
+
+.searchBox,
+.searchBox input {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+/** Produtos do Orçamento Dialog **/
+#produtoDoOrcamentoButtons2 {
+    float:left;
+    margin-top: 10px;
+}
+#produtoDoOrcamentoButtons {
+    float:right;
+    margin-top: 10px;
+}
+
+#produtoDoOrcamentoButtons input {
+    padding:5px 10px;
+    cursor:pointer;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.table .options .respondidoOrcamento {
+    color:#00ff00;
+}
+
+/** Buttons **/
+.buttons input {
+    padding:5px 10px;
+    cursor:pointer;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.buttons .left {
+    float:left;
+    margin-top: 10px;
+}
+
+.buttons .right {
+    float:right;
+    margin-top: 10px;
+}
+
+/** Orçamento **/
+#orcamentoTitle {
+    width:270px;
+    height:45px;
+    line-height:45px;
+    color:#fff;
+    padding-left:8px;
+    margin-bottom: 10px;
+    background: #332f2c;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+#orcamentoTitle .data {
+    color: #ffe400;
+}
+
+/** Mensagens **/
+#messageBar {
+    width:100%;
+}
+
+#messageBar #novaMensagem {
+    float:left;
+}
+
+#messageFilters {
+    float:left;
+    padding-top:20px;
+    margin-left:20px;
+}
+
+#messageFilters a {
+    background-color: #332f2c;
+    color:#fff;
+    text-decoration: none;
+    padding:10px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    margin-right:5px;
+}
+
+#messageFilters a:hover,
+#messageFilters a.selecionado {
+    color: #ffe400;
+}
+
+/** Button link **/
+.buttonLink {
+    background-color: #332f2c;
+    color:#fff;
+    text-decoration: none;
+    padding:10px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px
+}
+
+.buttonLink:hover {
+    color: #ffe400;
+}
+
+/** Técnico, Associado **/
+#novoTecnico,
+#novoAssociado,
+#novoRelatorioVisita {
+    margin: 10px 0 20px 0;
+}
+
+/** Widget **/
+.nagetive{
+	color:red;
+}
+
+.positive{
+	color:#00ff00;	
+}
+
+.widget{
+	float: left;
+	width:300px;
+	color:#ffffff;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.widgetHeader{
+	padding-left: 30px;
+	background-color: #5a5a5a;
+	font-size:25px;
+	font-weight:bold;	
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.widgetContent{
+	background-color: #332f2c;
+	font-size:40px;
+	text-align:center;
+	height:60px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
+}
+
+/** Message Send Box **/
+#novaMensagem {
+    margin: 10px 0;
+}
+
+.messageSendBox{
+	background-color: #332f2c;
+	color:white;
+	padding:10px;
+        display:none;
+        clear: both;
+	margin-bottom: 20px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px
+}
+
+.messageTextArea {
+	width:98%;
+	height:100px;
+}
+
+/** Minha Conta Form **/
+#minhaConta {
+    margin: 30px 0 0 0;
+    width: 750px;
+}
+
+#minhaConta p {
+    height: 50px;
+    clear: both;
+}
+
+#minhaConta label{
+    width:200px;
+    height:35px;
+    float:left;
+    font-size: 15pt;
+    padding-top:5px;
+}
+
+#minhaConta span.info {
+    float: left;
+    margin-left: 15px;
+    font-size: 10pt;
+}
+
+#minhaConta input[type=text],
+#minhaConta input[type=password] {
+    width: 250px;
+    height:35px;
+    float:left;
+    border: 1px solid #332f2c;
+}
+
+#minhaConta input[type=submit] {
+    width: 250px;
+    float: right;
+    height:35px;
+    margin-right: 298px;
+    cursor: pointer;
+}
+
+#minhaConta input[type=submit]:hover {
+    background: #5bc32e;
+}
+
+#minhaConta input {
+    font-size: 15pt;
+}
+
+#minhaConta input[type=submit],
+#minhaConta input[type=text],
+#minhaConta input[type=password],
+.password_strength {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+#messages {
+    width:750px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/** Password Strength Meter **/
+.password_strength {
+    height:35px;
+    padding: 0 10px;
+    margin-left: 15px;
+    display: inline-block;
+    line-height: 35px;
+}
+.password_strength_1 {
+    background-color: #fcb6b1;
+}
+.password_strength_2 {
+    background-color: #fccab1;
+}
+.password_strength_3 {
+    background-color: #fcfbb1;
+}
+.password_strength_4 {
+    background-color: #dafcb1;
+}
+.password_strength_5 {
+    background-color: #bcfcb1;
+}
+
+/** Diálogo Detalhado **/
+.detailedDialog p {
+    width:100%;
+    clear:both;
+    height:25px;
+    padding-top:5px;
+}
+
+.detailedDialog .label {
+    width:40%;
+    float:left;
+    font-weight: bold;
+}
+
+.detailedDialog .value {
+    width:60%;
+    float:left;
+}
+
+.detailedDialog .value textarea {
+    width:350px;
+    height:100px;
+}
+
+.detailedDialog input {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+/** Date Picker **/
+#datePanel {
+    margin-bottom: 20px;
+}
+#datePanel .datePicker {
+    height:20px;
+    border: 1px solid #332f2c;
+}
+
+#datePanel .ui-datepicker-trigger {
+    display:none;
+}
+
+#datePanel .datePicker,
+#datePanel input[type=submit],
+#chartsPanel a {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+#datePanel input[type=submit] {
+    height:20px;
+    padding: 0 10px;
+}
+
+#chartsPanel {
+    margin-bottom: 20px;
+}
+
+#chartsPanel a {
+    background: #332f2c;
+    padding: 5px;
+    color:#fff;
+    text-decoration: none;
+}
+
+#chartsPanel a:hover {
+    color: #ffe400;
+}
+
+#produtoSearch input {
+    margin-right:2px;
+}

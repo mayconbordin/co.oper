@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.Graos" table="graos">
+    <id column="romaneio" name="romaneio" type="integer"/>
+    <property column="data" name="data" not-null="true" type="date"/>
+    <property column="descontos" name="descontos" not-null="true" type="double"/>
+    <property column="descricao" length="200" name="descricao" not-null="true" type="string"/>
+    <property column="motorista_caminhao" length="80" name="motoristaCaminhao" not-null="true" type="string"/>
+    <property column="peso_qtde" name="pesoQtde" not-null="true" type="double"/>
+    <property column="placacaminhao" length="7" name="placaCaminhao" not-null="true" type="string"/>
+    <property column="produto" length="30" name="produto" not-null="true" type="string"/>
+    <property column="status" length="30" name="status" not-null="true" type="string"/>
+    <many-to-one class="com.cooper.model.entity.Associado" column="associado" name="associado"/>
+  </class>
+</hibernate-mapping>

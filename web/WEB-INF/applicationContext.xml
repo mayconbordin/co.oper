@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- generator:beans -->
+    <bean id="paginateListFactory" class="com.strutstool.pagination.factory.PaginateListFactory" />
+    
+    <!-- generator:imports -->
+    <import resource="classpath:com/cooper/controller/config/LoginBeanFactory.xml" />
+
+    <import resource="classpath:com/cooper/tecnico/controller/config/ContaBeanFactory.xml" />
+    <import resource="classpath:com/cooper/tecnico/controller/config/RelatorioVisitaBeanFactory.xml" />
+
+    <import resource="classpath:com/cooper/funcionario/controller/config/IndexBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/AcessoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/MensagemBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/OrcamentoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/AssociadoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/TecnicoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/funcionario/controller/config/UsuarioBeanFactory.xml" />
+    
+    <import resource="classpath:com/cooper/associado/controller/config/IndexBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/CartaoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/TituloBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/RelatorioVisitaBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/ProdutoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/OrcamentoBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/MensagemBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/GraosBeanFactory.xml" />
+    <import resource="classpath:com/cooper/associado/controller/config/ContaBeanFactory.xml" />
+</beans>

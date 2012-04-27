@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="titulo" namespace="/associado/titulo" extends="associadoPackage">
+    	<!-- Index -->
+        <action name="index" method="index" class="tituloController">
+            <result name="success" type="tiles">associadoTituloIndex</result>
+            <result name="error" type="tiles">associadoTituloIndex</result>
+            <result name="input" type="tiles">associadoTituloIndex</result>
+	</action>
+
+        <action name="mostraTotal" method="mostraTotal" class="tituloController">
+            <result name="success">/WEB-INF/associado/titulo/mostraTotal.jsp</result>
+            <result name="error">/WEB-INF/associado/titulo/mostraTotal.jsp</result>
+            <result name="input">/WEB-INF/associado/titulo/mostraTotal.jsp</result>
+        </action>
+
+    </package>
+</struts>

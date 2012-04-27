@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.cooper.model.entity.Associado" table="associado">
+    <id column="codigo" length="20" name="codigo" type="string"/>
+    <property column="nome" length="120" name="nome" not-null="true" type="string"/>
+    <property column="cpfcnpj" length="18" name="cpfcnpj" not-null="true" type="string"/>
+    <property column="data_cadastro " name="dataCadastro" not-null="true" type="date"/>
+    <property column="tem_conta" name="temConta" not-null="true" type="boolean"/>
+  </class>
+</hibernate-mapping>

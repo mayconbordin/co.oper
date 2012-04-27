@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!-- generator:mapping -->
+  <class name="com.cooper.model.entity.Produto" table="produto">
+    <id column="codigo" name="codigo" type="integer"/>
+    <property column="descricao" length="500" name="descricao" not-null="true" type="string"/>
+    <property column="preco" name="preco" not-null="true" type="double"/>
+  </class>
+</hibernate-mapping>

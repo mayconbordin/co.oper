@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <package name="funcionarioTecnico" namespace="/funcionario/tecnico" extends="default">
+        <action name="index" method="index" class="funcionarioTecnicoController">
+            <result name="success" type="tiles" >funcionarioTecnicoIndex</result>
+            <result name="error" type="tiles" >funcionarioTecnicoIndex</result>
+            <result name="input" type="tiles" >funcionarioTecnicoIndex</result>
+        </action>
+
+        <action name="addTecnico" method="addTecnico" class="funcionarioTecnicoController">
+            <result name="success">/WEB-INF/funcionario/tecnico/addTecnico.jsp</result>
+        </action>
+    </package>
+</struts>

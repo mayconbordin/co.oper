@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <!-- Layouts -->
+    <definition name="associadoLayout" template="/WEB-INF/layouts/baseLayout.jsp">
+        <put-attribute name="mainTitle" value="Portal Cooperativa"/>
+        <put-attribute name="menu" value="/WEB-INF/associado/layout/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
+        <put-attribute name="infoBoxes" value="/WEB-INF/associado/layout/infoBoxes.jsp"/>
+        <put-attribute name="commonJs" value="/WEB-INF/associado/layout/commonJs.jsp"/>
+    </definition>
+
+    <definition name="funcionarioLayout" template="/WEB-INF/layouts/baseLayout.jsp">
+        <put-attribute name="mainTitle" value="Portal Cooperativa"/>
+        <put-attribute name="menu" value="/WEB-INF/funcionario/layout/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
+        <put-attribute name="infoBoxes" value=""/>
+        <put-attribute name="commonJs" value="/WEB-INF/funcionario/layout/commonJs.jsp"/>
+    </definition>
+
+    <definition name="tecnicoLayout" template="/WEB-INF/layouts/baseLayout.jsp">
+        <put-attribute name="mainTitle" value="Portal Cooperativa"/>
+        <put-attribute name="menu" value="/WEB-INF/tecnico/layout/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
+        <put-attribute name="infoBoxes" value=""/>
+        <put-attribute name="commonJs" value="/WEB-INF/tecnico/layout/commonJs.jsp"/>
+    </definition>
+
+    <definition name="loginLayout" template="/WEB-INF/layouts/loginLayout.jsp">
+        <put-attribute name="mainTitle" value="Portal Cooperativa"/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
+    </definition>
+
+    <!-- Here you include the tiles pages -->
+    <!-- generator:pages -->
+
+    <!-- Start: Login Actions -->
+    <definition name="loginIndex" extends="loginLayout">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="body" value="/WEB-INF/login/index.jsp" />
+    </definition>
+    <definition name="loginAccessDenied" extends="loginLayout">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="body" value="/WEB-INF/login/accessDenied.jsp" />
+    </definition>
+    <definition name="loginCadastrar" extends="loginLayout">
+        <put-attribute name="title" value="Cadastrar-se" />
+        <put-attribute name="body" value="/WEB-INF/login/cadastrar.jsp" />
+    </definition>
+    <definition name="loginCadastrarSucesso" extends="loginLayout">
+        <put-attribute name="title" value="Cadastro efetuado com sucesso" />
+        <put-attribute name="body" value="/WEB-INF/login/cadastrarSucesso.jsp" />
+    </definition>
+    <definition name="loginCadastrarError" extends="loginLayout">
+        <put-attribute name="title" value="Erro no cadastro" />
+        <put-attribute name="body" value="/WEB-INF/login/cadastrarError.jsp" />
+    </definition>
+    <!-- End: Login Actions -->
+
+    <!-- ========================= Módulo: TÉCNICO ========================= -->
+    <!-- Start: Conta Actions -->
+    <definition name="tecnicoContaIndex" extends="tecnicoLayout">
+        <put-attribute name="title" value="Minha Conta" />
+        <put-attribute name="body" value="/WEB-INF/tecnico/conta/index.jsp" />
+    </definition>
+    <!-- End: Conta Actions -->
+
+    <!-- Start: Relatório Visitas Actions -->
+    <definition name="tecnicoRelatorioVisitaIndex" extends="tecnicoLayout">
+        <put-attribute name="title" value="Relatórios de Visitas" />
+        <put-attribute name="body" value="/WEB-INF/tecnico/relatorioVisita/index.jsp" />
+    </definition>
+    <!-- End: Relatório Visitas Actions -->
+
+    <!-- ======================= Módulo: FUNCIONÁRIO ======================= -->
+    <!-- Start: Index Actions -->
+    <definition name="funcionarioIndexIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Página Inicial" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/index/index.jsp" />
+    </definition>
+    <!-- End: Index Actions -->
+
+    <!-- Start: Acesso Actions -->
+    <definition name="funcionarioAcessoIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Acessos" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/acesso/index.jsp" />
+    </definition>
+    <!-- End: Acesso Actions -->
+
+    <!-- Start: Associado Actions -->
+    <definition name="funcionarioAssociadoIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Associados" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/associado/index.jsp" />
+    </definition>
+    <!-- End: Associado Actions -->
+
+    <!-- Start: Mensagem Actions -->
+    <definition name="funcionarioMensagemIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Mensagens" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/mensagem/index.jsp" />
+    </definition>
+    <!-- End: Mensagem Actions -->
+
+    <!-- Start: Orçamento Actions -->
+    <definition name="funcionarioOrcamentoIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Orçamentos" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/orcamento/index.jsp" />
+    </definition>
+    <!-- End: Orçamento Actions -->
+
+    <!-- Start: Técnico Actions -->
+    <definition name="funcionarioTecnicoIndex" extends="funcionarioLayout">
+        <put-attribute name="title" value="Técnicos" />
+        <put-attribute name="body" value="/WEB-INF/funcionario/tecnico/index.jsp" />
+    </definition>
+    <!-- End: Técnico Actions -->
+
+    <!-- ======================== Módulo: ASSOCIADO ======================== -->
+    <!-- Start: Conta Actions -->
+    <definition name="associadoContaIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Minha Conta" />
+        <put-attribute name="body" value="/WEB-INF/associado/conta/index.jsp" />
+    </definition>
+    <!-- End: Conta Actions -->
+
+    <!-- Start: Index Actions -->
+    <definition name="associadoIndexIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Página Inicial" />
+        <put-attribute name="body" value="/WEB-INF/associado/index/index.jsp" />
+    </definition>
+    <!-- End: Index Actions -->
+
+    <!-- Start: Títulos Actions -->
+    <definition name="associadoTituloIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Títulos" />
+        <put-attribute name="body" value="/WEB-INF/associado/titulo/index.jsp" />
+    </definition>
+    <!-- End: Títulos Actions -->
+
+    <!-- Start: Mensagens Actions -->
+    <definition name="associadoMensagemIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Mensagens" />
+        <put-attribute name="body" value="/WEB-INF/associado/mensagem/index.jsp" />
+    </definition>
+    <!-- End: Mensagens Actions -->
+
+    <!-- Start: Grãos Actions -->
+    <definition name="associadoGraosIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Grãos" />
+        <put-attribute name="body" value="/WEB-INF/associado/graos/index.jsp" />
+    </definition>
+    <!-- End: Grãos Actions -->
+
+    <!-- Start: Produtos Actions -->
+    <definition name="associadoProdutoIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Produtos" />
+        <put-attribute name="body" value="/WEB-INF/associado/produto/index.jsp" />
+    </definition>
+    <!-- End: Produtos Actions -->
+
+    <!-- Start: Orçamento Actions -->
+    <definition name="associadoOrcamentoIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Orçamentos" />
+        <put-attribute name="body" value="/WEB-INF/associado/orcamento/index.jsp" />
+    </definition>
+    <definition name="associadoOrcamentoDetalhes" extends="associadoLayout">
+        <put-attribute name="title" value="Detalhes do Orçamento" />
+        <put-attribute name="body" value="/WEB-INF/associado/orcamento/detalhes.jsp" />
+    </definition>
+    <!-- End: Orçamento Actions -->
+
+    <!-- Start: Relatório Visitas Actions -->
+    <definition name="associadoRelatorioVisitaIndex" extends="associadoLayout">
+        <put-attribute name="title" value="Visitas Técnicas" />
+        <put-attribute name="body" value="/WEB-INF/associado/relatorioVisita/index.jsp" />
+    </definition>
+    <!-- End: Relatório Visitas Actions -->
+</tiles-definitions>

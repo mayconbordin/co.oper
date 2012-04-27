@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="mensagemServiceImpl" class="com.cooper.model.service.impl.MensagemServiceImpl" />
+    <bean id="associadoServiceImpl" class="com.cooper.model.service.impl.AssociadoServiceImpl" />
+
+    <bean id="functionarioMensagemController" class="com.cooper.funcionario.controller.MensagemController" singleton="false">
+        <property name="mensagemService" ref="mensagemServiceImpl" />
+        <property name="associadoService" ref="associadoServiceImpl" />
+    </bean>
+</beans>

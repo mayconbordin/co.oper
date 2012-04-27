@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <package name="tecnicoConta" namespace="/tecnico/conta" extends="default">
+        <action name="index" method="index" class="tecnicoContaController">
+            <result name="success" type="tiles" >tecnicoContaIndex</result>
+            <result name="error" type="tiles" >tecnicoContaIndex</result>
+            <result name="input" type="tiles" >tecnicoContaIndex</result>
+        </action>
+
+        <action name="save" method="save" class="tecnicoContaController">
+            <result name="success" type="redirectAction">
+            	<param name="actionName">index</param>
+                <param name="namespace">/tecnico/conta</param>
+                <param name="status">sucesso</param>
+            </result>
+            <result name="error" type="tiles" >tecnicoContaIndex</result>
+            <result name="input" type="tiles" >tecnicoContaIndex</result>
+        </action>
+    </package>
+</struts>

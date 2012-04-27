@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="cartao" namespace="/associado/cartao" extends="associadoPackage">
+        <action name="mostraSaldo" method="mostraSaldo" class="cartaoController">
+            <result name="success">/WEB-INF/associado/cartao/mostraSaldo.jsp</result>
+            <result name="error">/WEB-INF/associado/cartao/mostraSaldo.jsp</result>
+            <result name="input">/WEB-INF/associado/cartao/mostraSaldo.jsp</result>
+        </action>
+     
+    </package>
+</struts>

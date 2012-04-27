@@ -1,0 +1,192 @@
+@font-face{
+	font-family: "Aller Regular";
+	src: url("../fonts/Aller_Rg.eot"); /* para IE */
+	src: local("Aller Regular"), url("../fonts/Aller_Rg.ttf") format("truetype");
+}
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	background: #006600;
+	font-family: "Aller Regular", Arial;
+}
+
+
+.inptform{
+	height:39px;
+	width:224px;
+	font-size:20px;
+	margin-top:10px;
+	text-align:center;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+
+.headerlogo{
+	text-align:center;
+	margin-top:5%;
+}
+
+.centro{
+	background:#332f2c;
+	height:300px;
+	color:#ffffff;
+	font-size:25px;
+	text-align:center;
+	margin-top:10px;
+}
+
+#acessoNegado h1 {
+    color:#ff4200;
+    margin-bottom: 20px;
+}
+
+#acessoNegado h3 a {
+    color:#fff;
+}
+
+#acessoNegado {
+    padding-top: 20px;
+}
+
+
+.formlogin{
+	margin-left:42%;
+	width:300px;
+}
+
+.legendas{
+	width:95px;
+	float:left;
+	text-align:left;
+	margin-right:5px;
+}
+
+.labelfor{
+	margin-top:12px;
+	height:39px;	
+}
+
+.entradas{
+	width:200px;
+	float:left;
+}
+
+.mantermerlogado{
+	clear:both;
+	font-size:16px;
+}
+
+.btnentrar{
+	margin-top:8px;
+	background:#005e00;
+	font-weight:bold;
+	color:#ffffff;
+	font-size:20px;
+	width:128px;
+	height:36px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+        cursor:pointer;
+}
+
+.btnentrar:hover {
+    color:#ffe400;
+}
+
+.recuperar{
+	position:relative;
+	bottom:-54px;
+}
+
+/** Footer **/
+#footerBig {
+    position:absolute;
+    bottom:40px;
+    width:100%;
+}
+
+#footer {
+    margin-left:2%;
+    margin-right:2%;
+    text-align:left;
+    font-size:18px;
+    background:#332f2c;
+    color:#ffffff;
+    height:58px;
+    padding-left:20px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -moz-box-shadow: 0 0 5px #3e3e3e;
+    -webkit-box-shadow: 0 0 5px #3e3e3e;
+    box-shadow: 0 0 5px #3e3e3e;
+}
+
+#footer span {
+    line-height: 58px;
+}
+
+/** Cadastro Form **/
+#cadastrarForm {
+    padding:20px 0 0 0;
+}
+
+#voltar {
+    color:#ffe400;
+    text-decoration: none;
+}
+
+#cadastrarForm .input {
+    width:450px;
+    margin:0 auto;
+    padding-bottom: 10px;
+}
+
+#cadastrarForm .input label {
+    width: 150px;
+    float:left;
+}
+
+#cadastrarForm .input select {
+    font-size: 16pt;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+#cadastrarForm .input input {
+    width:300px;
+    height:30px;
+    font-size: 16pt;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+#cadastrarForm .input input[type=submit] {
+    cursor:pointer;
+    float:right;
+}
+
+#cadastrarForm .input input[type=submit]:hover {
+    background:#4eb305;
+}
+
+#loginError {
+    width:400px;
+    margin:0 auto;
+    padding:10px 0;
+    background: #ff4200;
+    font-size: 12pt;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <package name="funcionarioAcesso" namespace="/funcionario/acesso" extends="default">
+        <action name="index" method="index" class="funcionarioAcessoController">
+            <result name="success" type="tiles" >funcionarioAcessoIndex</result>
+            <result name="error" type="tiles" >funcionarioAcessoIndex</result>
+            <result name="input" type="tiles" >funcionarioAcessoIndex</result>
+        </action>
+
+        <action name="mostraAcessosHoje" method="mostraAcessosHoje" class="funcionarioAcessoController">
+            <result name="success" >/WEB-INF/funcionario/acesso/mostraAcessosHoje.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+
+<struts>
+    <!-- Struts theme -->
+    <constant name="struts.ui.theme" value="simple" />
+    <!-- Development mode -->
+    <constant name="struts.devMode" value="true" />
+
+    <!-- Enable global file 'global.properties' -->
+    <constant name="struts.custom.i18n.resources" value="global" />
+
+    <!-- Start: Default package configuration -->
+    <package name="default" extends="struts-default">
+        <!-- Tiles -->
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+	</result-types>
+        
+        <interceptors>
+            <!-- Declare your interceptors here -->
+
+            <!-- The application stack, place your interceptors here -->
+            <interceptor-stack name="applicationStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*,^struts\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse,index</param>
+                </interceptor-ref>
+
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <!-- Set the above interceptor stack as default -->
+	<default-interceptor-ref name="applicationStack" />
+    </package>
+    <!-- End: Default package configuration -->
+
+    <!-- Start: Associado package configuration -->
+    <package name="associadoPackage" extends="struts-default">
+        <!-- Tiles -->
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+	</result-types>
+
+        <interceptors>
+            <!-- Declare your interceptors here -->
+            <interceptor
+                name="acesso"
+                class="com.cooper.associado.interceptor.AcessoInterceptor"
+            />
+
+            <!-- The application stack, place your interceptors here -->
+            <interceptor-stack name="applicationStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="acesso"/>
+
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*,^struts\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse,index</param>
+                </interceptor-ref>
+
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <!-- Set the above interceptor stack as default -->
+	<default-interceptor-ref name="applicationStack" />
+    </package>
+    <!-- End: Associado package configuration -->
+
+    <!-- Here you include other struts configuration files -->
+    <!-- generator:includes -->
+    <include file="com/cooper/controller/config/LoginController.xml" />
+
+    <include file="com/cooper/tecnico/controller/config/ContaController.xml" />
+    <include file="com/cooper/tecnico/controller/config/RelatorioVisitaController.xml" />
+
+    <include file="com/cooper/funcionario/controller/config/IndexController.xml" />
+    <include file="com/cooper/funcionario/controller/config/AcessoController.xml" />
+    <include file="com/cooper/funcionario/controller/config/MensagemController.xml" />
+    <include file="com/cooper/funcionario/controller/config/OrcamentoController.xml" />
+    <include file="com/cooper/funcionario/controller/config/AssociadoController.xml" />
+    <include file="com/cooper/funcionario/controller/config/TecnicoController.xml" />
+    <include file="com/cooper/funcionario/controller/config/UsuarioController.xml" />
+    
+    <include file="com/cooper/associado/controller/config/IndexController.xml" />
+    <include file="com/cooper/associado/controller/config/CartaoController.xml" />
+    <include file="com/cooper/associado/controller/config/TituloController.xml" />
+    <include file="com/cooper/associado/controller/config/RelatorioVisitaController.xml" />
+    <include file="com/cooper/associado/controller/config/ProdutoController.xml" />
+    <include file="com/cooper/associado/controller/config/OrcamentoController.xml" />
+    <include file="com/cooper/associado/controller/config/MensagemController.xml" />
+    <include file="com/cooper/associado/controller/config/GraosController.xml" />
+    <include file="com/cooper/associado/controller/config/ContaController.xml" />
+</struts>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "/WEB-INF/classes/struts-2.1.7.dtd">
+    
+<struts>
+    <package name="orcamento" namespace="/associado/orcamento" extends="associadoPackage">
+    	<!-- Index -->
+        <action name="index" method="index" class="orcamentoController">
+            <result name="success" type="tiles">associadoOrcamentoIndex</result>
+            <result name="error" type="tiles">associadoOrcamentoIndex</result>
+            <result name="input" type="tiles">associadoOrcamentoIndex</result>
+	</action>
+
+        <action name="addProduto" method="addProduto" class="orcamentoController" />
+        <action name="removeProduto" method="removeProduto" class="orcamentoController" />
+        <action name="saveOrcamento" method="saveOrcamento" class="orcamentoController" />
+        <action name="removeOrcamento" method="removeOrcamento" class="orcamentoController" />
+
+        <action name="orcamentoBox" method="orcamentoBox" class="orcamentoController">
+            <result name="success">/WEB-INF/associado/orcamento/orcamentoBox.jsp</result>
+        </action>
+
+        <action name="orcamentoConfirmDialog" method="orcamentoConfirmDialog" class="orcamentoController">
+            <result name="success">/WEB-INF/associado/orcamento/orcamentoConfirmDialog.jsp</result>
+        </action>
+
+        <action name="orcamentoDialog" method="orcamentoDialog" class="orcamentoController">
+            <result name="success">/WEB-INF/associado/orcamento/orcamentoDialog.jsp</result>
+        </action>
+
+        <action name="detalhes" method="detalhes" class="orcamentoController">
+            <result name="success" type="tiles">associadoOrcamentoDetalhes</result>
+        </action>
+    </package>
+</struts>
